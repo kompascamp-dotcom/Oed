@@ -3,308 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
 
 <title>Книжка без слов — ОЕД</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #111;
-    color: white;
-    min-height: 100vh;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b1020;
+    color:white;
+    min-height:100vh;
 }
 
-/* ---------- HEADER ---------- */
+/* ===== СТАРТОВЫЙ ЭКРАН ===== */
 
-header {
-    padding: 18px 20px;
-    text-align: center;
-    background: #111;
+.start-screen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
 }
 
-.logo {
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    opacity: 0.65;
+.start-content{
+    width:100%;
+    max-width:700px;
 }
 
-h1 {
-    margin-top: 6px;
-    font-size: 25px;
+.start-content h1{
+    font-size:28px;
+    margin:0 0 15px;
+    letter-spacing:1px;
 }
 
-.subtitle {
-    margin-top: 5px;
-    font-size: 14px;
-    opacity: 0.6;
+.start-content h2{
+    font-size:48px;
+    margin:20px 0;
 }
 
-/* ---------- MAIN ---------- */
-
-main {
-    max-width: 700px;
-    margin: auto;
-    padding: 15px;
+.start-content p{
+    color:#aeb7cc;
+    font-size:19px;
+    line-height:1.6;
+    margin:0 auto 35px;
+    max-width:550px;
 }
 
-/* ---------- PAGE ---------- */
-
-.page {
-    width: 100%;
-    height: 430px;
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 35px;
-    transition: background 0.3s ease;
+.start-button{
+    border:0;
+    border-radius:16px;
+    padding:17px 50px;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#D4AF37;
+    color:#111;
+    transition:0.2s;
 }
 
-.page-number {
-    font-size: 13px;
-    font-weight: bold;
-    opacity: 0.55;
-    margin-bottom: 25px;
+.start-button:hover{
+    transform:translateY(-3px);
 }
 
-.page h2 {
-    font-size: 42px;
-    margin-bottom: 18px;
+/* ===== ОСНОВНОЕ ПРИЛОЖЕНИЕ ===== */
+
+.app{
+    display:none;
 }
 
-.page p {
-    font-size: 20px;
-    line-height: 1.5;
-    max-width: 520px;
+header{
+    text-align:center;
+    padding:30px 20px 20px;
 }
 
-.yellow {
-    background: #f5c400;
-    color: #111;
+header h1{
+    margin:0;
+    font-size:24px;
+    letter-spacing:1px;
 }
 
-.red {
-    background: #d92828;
-    color: white;
+header p{
+    margin:10px 0 0;
+    color:#aeb7cc;
 }
 
-.white {
-    background: #f4f4f4;
-    color: #111;
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
 }
 
-.green {
-    background: #168447;
-    color: white;
+.page{
+    min-height:430px;
+    border-radius:24px;
+    padding:45px 35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:0.3s;
 }
 
-.black {
-    background: #050505;
-    color: white;
-    border: 1px solid #333;
+.page h2{
+    font-size:42px;
+    margin:0 0 20px;
 }
 
-/* ---------- BUTTONS ---------- */
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    margin-top: 15px;
+.page p{
+    max-width:650px;
+    font-size:21px;
+    line-height:1.5;
+    margin:10px auto;
 }
 
-.color-btn {
-    border: none;
-    height: 48px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.15s ease;
+/* ===== ЦВЕТА ===== */
+
+.gold{
+    background:#D4AF37;
+    color:#111;
 }
 
-.color-btn:active {
-    transform: scale(0.94);
+.black{
+    background:#050505;
+    color:white;
 }
 
-.btn-yellow {
-    background: #f5c400;
-    color: #111;
+.red{
+    background:#d92828;
+    color:white;
 }
 
-.btn-red {
-    background: #d92828;
-    color: white;
+.white{
+    background:#f4f4f4;
+    color:#111;
 }
 
-.btn-white {
-    background: white;
-    color: #111;
+.green{
+    background:#168447;
+    color:white;
 }
 
-.btn-green {
-    background: #168447;
-    color: white;
+/* ===== КНОПКИ ===== */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:20px 0;
 }
 
-.btn-black {
-    background: #050505;
-    color: white;
-    border: 1px solid #555;
+button{
+    border:0;
+    border-radius:12px;
+    padding:12px 18px;
+    font-size:16px;
+    cursor:pointer;
+    background:#1c2742;
+    color:white;
+    transition:0.2s;
 }
 
-/* ---------- CONTROLS ---------- */
-
-.controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 15px;
+button:hover{
+    transform:translateY(-2px);
+    background:#293758;
 }
 
-.control-btn {
-    background: #202020;
-    color: white;
-    border: 1px solid #333;
-    border-radius: 13px;
-    padding: 14px;
-    font-size: 15px;
-    cursor: pointer;
+.color-buttons button{
+    width:45px;
+    height:45px;
+    padding:0;
+    font-weight:bold;
 }
 
-.control-btn:active {
-    transform: scale(0.98);
+/* ===== ИНФОРМАЦИЯ ===== */
+
+.info{
+    margin-top:25px;
+    background:#10172a;
+    border-radius:18px;
+    padding:25px;
 }
 
-/* ---------- INFO ---------- */
-
-.info {
-    margin-top: 15px;
-    background: #191919;
-    border-radius: 18px;
-    padding: 20px;
+.info h3{
+    margin-top:0;
 }
 
-.info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.info p{
+    color:#c6cede;
+    line-height:1.6;
 }
 
-.info p {
-    color: #ccc;
-    line-height: 1.5;
-    font-size: 15px;
+.footer{
+    text-align:center;
+    color:#707b94;
+    padding:30px 20px;
+    font-size:14px;
 }
 
-/* ---------- STORY MODE ---------- */
+/* ===== МОБИЛЬНЫЕ ===== */
 
-.story {
-    margin-top: 15px;
-    background: #191919;
-    border-radius: 18px;
-    padding: 20px;
-}
+@media(max-width:600px){
 
-.story-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 8px;
-}
-
-.story-text {
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-/* ---------- MODAL ---------- */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal-box {
-    background: #191919;
-    border-radius: 22px;
-    max-width: 550px;
-    width: 100%;
-    padding: 25px;
-}
-
-.modal-box h2 {
-    margin-bottom: 15px;
-}
-
-.modal-box p {
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.close {
-    margin-top: 20px;
-    width: 100%;
-    padding: 13px;
-    background: white;
-    color: black;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 550px) {
-
-    header {
-        padding: 15px;
+    .start-content h1{
+        font-size:22px;
     }
 
-    h1 {
-        font-size: 22px;
+    .start-content h2{
+        font-size:38px;
     }
 
-    .page {
-        height: 390px;
-        border-radius: 20px;
-        padding: 25px;
+    .start-content p{
+        font-size:17px;
     }
 
-    .page h2 {
-        font-size: 34px;
+    .page{
+        min-height:380px;
+        padding:30px 20px;
     }
 
-    .page p {
-        font-size: 18px;
+    .page h2{
+        font-size:32px;
     }
 
-    .buttons {
-        gap: 5px;
-    }
-
-    .color-btn {
-        height: 44px;
-        font-size: 12px;
+    .page p{
+        font-size:18px;
     }
 }
 </style>
@@ -312,136 +241,126 @@ main {
 
 <body>
 
-<header>
-    <div class="logo">ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</div>
-    <h1>Книжка без слов</h1>
-    <div class="subtitle">Рассказывай Евангелие без единого слова</div>
-</header>
+<!-- ============================= -->
+<!--       СТАРТОВЫЙ ЭКРАН        -->
+<!-- ============================= -->
 
-<main>
+<div id="startScreen" class="start-screen">
 
-    <!-- PAGE -->
+    <div class="start-content">
 
-    <section id="page" class="page yellow">
+        <h1>ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</h1>
 
-        <div class="page-number" id="pageNumber">
-            СТРАНИЦА 1 ИЗ 5
-        </div>
-
-        <h2 id="pageTitle">
-            ЖЁЛТАЯ
-        </h2>
-
-        <p id="pageDescription">
-            Бог создал прекрасный мир и хочет, чтобы человек был с Ним.
-        </p>
-
-    </section>
-
-
-    <!-- COLOR BUTTONS -->
-
-    <div class="buttons">
-
-        <button class="color-btn btn-yellow"
-                onclick="showPage(0)">
-            1
-        </button>
-
-        <button class="color-btn btn-red"
-                onclick="showPage(1)">
-            2
-        </button>
-
-        <button class="color-btn btn-white"
-                onclick="showPage(2)">
-            3
-        </button>
-
-        <button class="color-btn btn-green"
-                onclick="showPage(3)">
-            4
-        </button>
-
-        <button class="color-btn btn-black"
-                onclick="showPage(4)">
-            5
-        </button>
-
-    </div>
-
-
-    <!-- CONTROLS -->
-
-    <div class="controls">
-
-        <button class="control-btn" onclick="previousPage()">
-            ← Назад
-        </button>
-
-        <button class="control-btn" onclick="nextPage()">
-            Далее →
-        </button>
-
-        <button class="control-btn" onclick="randomPage()">
-            🎲 Случайная страница
-        </button>
-
-        <button class="control-btn" onclick="openTraining()">
-            🎯 Тренировка
-        </button>
-
-    </div>
-
-
-    <!-- STORY -->
-
-    <div class="story">
-
-        <div class="story-title">
-            Подсказка рассказчику
-        </div>
-
-        <div class="story-text" id="storyText">
-            Начни с Божьего творения. Расскажи, что Бог свят, добр и хочет иметь отношения с человеком.
-        </div>
-
-    </div>
-
-
-    <!-- ABOUT -->
-
-    <div class="info">
-
-        <h3>Как использовать</h3>
+        <h2>Книжка без слов</h2>
 
         <p>
-            Покажи ребёнку одну страницу и рассказывай историю,
-            опираясь только на цвет. Не обязательно запоминать
-            текст дословно — главное передать Евангелие понятно,
-            просто и доступно.
+            Рассказывай Евангелие без единого слова.
+            Пять цветов помогут просто и понятно
+            рассказать ребёнку о Божьей любви и спасении.
         </p>
+
+        <button class="start-button" onclick="startApp()">
+            НАЧАТЬ
+        </button>
 
     </div>
 
-</main>
+</div>
 
 
-<!-- TRAINING MODAL -->
+<!-- ============================= -->
+<!--        ОСНОВНОЕ ПРИЛОЖЕНИЕ   -->
+<!-- ============================= -->
 
-<div class="modal" id="trainingModal">
+<div id="app" class="app">
 
-    <div class="modal-box">
+    <header>
 
-        <h2>🎯 Тренировка</h2>
+        <h1>ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</h1>
 
-        <p id="trainingText">
-            Попробуй рассказать всю историю, используя только цвета.
-        </p>
+        <p>Книжка без слов</p>
 
-        <button class="close" onclick="closeTraining()">
-            Закрыть
-        </button>
+    </header>
+
+
+    <div class="container">
+
+        <!-- ЦВЕТНАЯ СТРАНИЦА -->
+
+        <div id="page" class="page gold">
+
+            <h2 id="title">
+                ЗОЛОТАЯ
+            </h2>
+
+            <p id="description">
+                Бог свят, прекрасен и приготовил
+                для человека жизнь с Ним.
+            </p>
+
+        </div>
+
+
+        <!-- ВЫБОР ЦВЕТА -->
+
+        <div class="buttons color-buttons">
+
+            <button onclick="showPage(0)">1</button>
+
+            <button onclick="showPage(1)">2</button>
+
+            <button onclick="showPage(2)">3</button>
+
+            <button onclick="showPage(3)">4</button>
+
+            <button onclick="showPage(4)">5</button>
+
+        </div>
+
+
+        <!-- НАВИГАЦИЯ -->
+
+        <div class="buttons">
+
+            <button onclick="previousPage()">
+                ← Назад
+            </button>
+
+            <button onclick="nextPage()">
+                Далее →
+            </button>
+
+            <button onclick="randomPage()">
+                🎲 Случайная страница
+            </button>
+
+        </div>
+
+
+        <!-- ПОДСКАЗКА -->
+
+        <div class="info">
+
+            <h3>
+                Как рассказывать
+            </h3>
+
+            <p id="story">
+
+                Начни с Бога. Расскажи, что Бог свят,
+                прекрасен, любит людей и приготовил
+                для человека жизнь с Ним.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        Проект для благовестия детей
 
     </div>
 
@@ -450,213 +369,217 @@ main {
 
 <script>
 
-/* =========================================
-   ДАННЫЕ СТРАНИЦ
-========================================= */
+/* ============================= */
+/*          ДАННЫЕ СТРАНИЦ       */
+/* ============================= */
 
 const pages = [
 
     {
-        className: "yellow",
-        title: "ЖЁЛТАЯ",
+        className:"gold",
+
+        title:"ЗОЛОТАЯ",
+
         description:
-        "Бог создал прекрасный мир и хочет, чтобы человек был с Ним.",
+        "Бог свят, прекрасен и приготовил для человека жизнь с Ним.",
+
         story:
-        "Начни с Божьего творения. Расскажи, что Бог свят, добр и хочет иметь отношения с человеком."
+        "Начни с Бога. Расскажи, что Бог свят, прекрасен, любит людей и приготовил для человека жизнь с Ним."
     },
 
-    {
-        className: "red",
-        title: "КРАСНАЯ",
-        description:
-        "Иисус Христос умер за наши грехи и отдал за нас Свою жизнь.",
-        story:
-        "Расскажи о грехе человека и о том, что Иисус добровольно умер на кресте ради нашего спасения."
-    },
 
     {
-        className: "white",
-        title: "БЕЛАЯ",
+        className:"black",
+
+        title:"ЧЁРНАЯ",
+
         description:
-        "Бог может простить наши грехи и очистить нас.",
+        "Грех отделяет человека от святого Бога.",
+
         story:
-        "Объясни, что через Иисуса человек может получить прощение и новую жизнь."
+        "Расскажи о грехе. Все люди согрешили, а грех отделяет человека от Бога."
     },
 
-    {
-        className: "green",
-        title: "ЗЕЛЁНАЯ",
-        description:
-        "После обращения к Богу начинается новая жизнь и духовный рост.",
-        story:
-        "Расскажи о молитве, чтении Библии, послушании Богу и росте в вере."
-    },
 
     {
-        className: "black",
-        title: "ЧЁРНАЯ",
+        className:"red",
+
+        title:"КРАСНАЯ",
+
         description:
-        "Грех отделяет человека от Бога, но Бог предлагает спасение.",
+        "Иисус Христос умер за наши грехи.",
+
         story:
-        "Заверши рассказ призывом задуматься о своих отношениях с Богом и принять решение следовать за Ним."
+        "Расскажи, что Иисус Христос умер на кресте за наши грехи и отдал Свою жизнь ради нашего спасения."
+    },
+
+
+    {
+        className:"white",
+
+        title:"БЕЛАЯ",
+
+        description:
+        "Через Иисуса Христа человек получает прощение и очищение.",
+
+        story:
+        "Расскажи о Божьем прощении. Через веру в Иисуса Христа человек получает прощение грехов и новую жизнь."
+    },
+
+
+    {
+        className:"green",
+
+        title:"ЗЕЛЁНАЯ",
+
+        description:
+        "Новая жизнь с Богом означает духовный рост.",
+
+        story:
+        "Расскажи о духовном росте: молитве, чтении Библии, послушании Богу, общении с верующими и служении."
     }
 
 ];
 
 
-/* =========================================
-   ТЕКУЩАЯ СТРАНИЦА
-========================================= */
-
 let currentPage = 0;
 
 
-/* =========================================
-   ПОКАЗАТЬ СТРАНИЦУ
-========================================= */
+/* ============================= */
+/*          ЗАПУСК ПРИЛОЖЕНИЯ   */
+/* ============================= */
 
-function showPage(number) {
+function startApp(){
+
+    document.getElementById("startScreen").style.display = "none";
+
+    document.getElementById("app").style.display = "block";
+
+}
+
+
+/* ============================= */
+/*        ПОКАЗ СТРАНИЦЫ         */
+/* ============================= */
+
+function showPage(number){
 
     currentPage = number;
 
-    const page = pages[number];
-
-    const pageElement =
+    const page =
         document.getElementById("page");
 
-    pageElement.className =
-        "page " + page.className;
+    page.className =
+        "page " + pages[number].className;
 
-    document.getElementById("pageNumber").textContent =
-        "СТРАНИЦА " + (number + 1) + " ИЗ 5";
+    document.getElementById("title").textContent =
+        pages[number].title;
 
-    document.getElementById("pageTitle").textContent =
-        page.title;
+    document.getElementById("description").textContent =
+        pages[number].description;
 
-    document.getElementById("pageDescription").textContent =
-        page.description;
+    document.getElementById("story").textContent =
+        pages[number].story;
 
-    document.getElementById("storyText").textContent =
-        page.story;
 }
 
 
-/* =========================================
-   СЛЕДУЮЩАЯ
-========================================= */
+/* ============================= */
+/*             ДАЛЕЕ             */
+/* ============================= */
 
-function nextPage() {
+function nextPage(){
 
     currentPage++;
 
-    if (currentPage >= pages.length) {
+    if(currentPage >= pages.length){
+
         currentPage = 0;
+
     }
 
     showPage(currentPage);
+
 }
 
 
-/* =========================================
-   ПРЕДЫДУЩАЯ
-========================================= */
+/* ============================= */
+/*            НАЗАД              */
+/* ============================= */
 
-function previousPage() {
+function previousPage(){
 
     currentPage--;
 
-    if (currentPage < 0) {
+    if(currentPage < 0){
+
         currentPage = pages.length - 1;
+
     }
 
     showPage(currentPage);
+
 }
 
 
-/* =========================================
-   СЛУЧАЙНАЯ
-========================================= */
+/* ============================= */
+/*       СЛУЧАЙНАЯ СТРАНИЦА      */
+/* ============================= */
 
-function randomPage() {
+function randomPage(){
 
     let random;
 
-    do {
-        random = Math.floor(Math.random() * pages.length);
+    do{
+
+        random =
+            Math.floor(
+                Math.random() * pages.length
+            );
+
     }
-    while (random === currentPage);
+
+    while(
+        random === currentPage &&
+        pages.length > 1
+    );
 
     showPage(random);
+
 }
 
 
-/* =========================================
-   ТРЕНИРОВКА
-========================================= */
+/* ============================= */
+/*          КЛАВИАТУРА           */
+/* ============================= */
 
-function openTraining() {
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    const questions = [
+        if(
+            document.getElementById("app").style.display
+            !== "block"
+        ){
 
-        "Попробуй рассказать историю, начиная с жёлтого цвета.",
+            return;
 
-        "Посмотри на все пять цветов и попробуй вспомнить, что означает каждый из них.",
+        }
 
-        "Попробуй рассказать Евангелие человеку, который никогда раньше его не слышал.",
+        if(event.key === "ArrowRight"){
 
-        "Покажи себе случайный цвет и попробуй продолжить историю с него.",
+            nextPage();
 
-        "Попробуй рассказать всю историю без подсказок."
-    ];
+        }
 
-    const random =
-        Math.floor(Math.random() * questions.length);
+        if(event.key === "ArrowLeft"){
 
-    document.getElementById("trainingText").textContent =
-        questions[random];
+            previousPage();
 
-    document.getElementById("trainingModal")
-        .classList.add("active");
-}
+        }
 
-
-/* =========================================
-   ЗАКРЫТЬ ТРЕНИРОВКУ
-========================================= */
-
-function closeTraining() {
-
-    document.getElementById("trainingModal")
-        .classList.remove("active");
-}
-
-
-/* =========================================
-   КЛАВИАТУРА
-========================================= */
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "ArrowRight") {
-        nextPage();
     }
-
-    if (event.key === "ArrowLeft") {
-        previousPage();
-    }
-
-    if (event.key === "Escape") {
-        closeTraining();
-    }
-
-});
-
-
-/* =========================================
-   СТАРТ
-========================================= */
-
-showPage(0);
+);
 
 </script>
 
