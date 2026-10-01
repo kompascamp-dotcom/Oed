@@ -2,238 +2,545 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#10131a">
 
-<title>Книжка без слов — ОЕД</title>
+<title>Пять цветов</title>
 
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --bg:#080b11;
+    --card:#111722;
+    --card2:#171e2b;
+    --text:#f5f7fa;
+    --muted:#aeb7c5;
+    --accent:#ffffff;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0b1020;
-    color:white;
-    min-height:100vh;
+    overflow-x:hidden;
 }
 
-/* ===== СТАРТОВЫЙ ЭКРАН ===== */
-
-.start-screen{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:25px;
-}
-
-.start-content{
-    width:100%;
-    max-width:700px;
-}
-
-.start-content h1{
-    font-size:28px;
-    margin:0 0 15px;
-    letter-spacing:1px;
-}
-
-.start-content h2{
-    font-size:48px;
-    margin:20px 0;
-}
-
-.start-content p{
-    color:#aeb7cc;
-    font-size:19px;
-    line-height:1.6;
-    margin:0 auto 35px;
-    max-width:550px;
-}
-
-.start-button{
-    border:0;
-    border-radius:16px;
-    padding:17px 50px;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-    background:#D4AF37;
-    color:#111;
-    transition:0.2s;
-}
-
-.start-button:hover{
-    transform:translateY(-3px);
-}
-
-/* ===== ОСНОВНОЕ ПРИЛОЖЕНИЕ ===== */
+/* =========================
+   APP
+========================= */
 
 .app{
-    display:none;
-}
-
-header{
-    text-align:center;
-    padding:30px 20px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:24px;
-    letter-spacing:1px;
-}
-
-header p{
-    margin:10px 0 0;
-    color:#aeb7cc;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     padding:20px;
 }
 
-.page{
-    min-height:430px;
-    border-radius:24px;
-    padding:45px 35px;
+.screen{
+    width:100%;
+    max-width:520px;
+    min-height:720px;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(255,255,255,.07), transparent 35%),
+        var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+/* =========================
+   START
+========================= */
+
+.start{
+    min-height:720px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    transition:0.3s;
+    padding:35px;
+    position:relative;
 }
 
-.page h2{
-    font-size:42px;
-    margin:0 0 20px;
-}
-
-.page p{
-    max-width:650px;
-    font-size:21px;
-    line-height:1.5;
-    margin:10px auto;
-}
-
-/* ===== ЦВЕТА ===== */
-
-.gold{
-    background:#D4AF37;
+.logo{
+    width:92px;
+    height:92px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#fff,#cfd5dd);
     color:#111;
-}
-
-.black{
-    background:#050505;
-    color:white;
-}
-
-.red{
-    background:#d92828;
-    color:white;
-}
-
-.white{
-    background:#f4f4f4;
-    color:#111;
-}
-
-.green{
-    background:#168447;
-    color:white;
-}
-
-/* ===== КНОПКИ ===== */
-
-.buttons{
     display:flex;
     justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:20px 0;
+    align-items:center;
+    font-size:42px;
+    font-weight:900;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    margin-bottom:28px;
 }
 
-button{
-    border:0;
-    border-radius:12px;
-    padding:12px 18px;
-    font-size:16px;
-    cursor:pointer;
-    background:#1c2742;
-    color:white;
-    transition:0.2s;
+.start h1{
+    font-size:42px;
+    line-height:1.05;
+    letter-spacing:-1.5px;
+    margin-bottom:14px;
 }
 
-button:hover{
-    transform:translateY(-2px);
-    background:#293758;
+.start h2{
+    font-size:18px;
+    font-weight:500;
+    color:var(--muted);
+    margin-bottom:22px;
 }
 
-.color-buttons button{
-    width:45px;
-    height:45px;
-    padding:0;
-    font-weight:bold;
-}
-
-/* ===== ИНФОРМАЦИЯ ===== */
-
-.info{
-    margin-top:25px;
-    background:#10172a;
-    border-radius:18px;
-    padding:25px;
-}
-
-.info h3{
-    margin-top:0;
-}
-
-.info p{
-    color:#c6cede;
+.start p{
+    color:#c4cbd5;
     line-height:1.6;
+    max-width:390px;
+    margin-bottom:35px;
 }
 
-.footer{
-    text-align:center;
-    color:#707b94;
-    padding:30px 20px;
+.primary{
+    border:none;
+    background:#fff;
+    color:#111;
+    padding:17px 32px;
+    border-radius:18px;
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+}
+
+.primary:active{
+    transform:scale(.97);
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    color:white;
+    padding:14px 22px;
+    border-radius:16px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top{
+    padding:18px 20px 12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.back{
+    width:42px;
+    height:42px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.counter{
+    color:var(--muted);
+    font-size:14px;
+    font-weight:700;
+}
+
+.mode-button{
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:white;
+    padding:10px 13px;
+    border-radius:12px;
+    font-size:12px;
+    cursor:pointer;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress{
+    display:flex;
+    gap:5px;
+    padding:0 20px 15px;
+}
+
+.progress span{
+    height:4px;
+    flex:1;
+    border-radius:10px;
+    background:rgba(255,255,255,.1);
+    transition:.3s;
+}
+
+.progress span.active{
+    background:white;
+}
+
+/* =========================
+   COLOR PAGE
+========================= */
+
+.color-page{
+    min-height:570px;
+    display:flex;
+    flex-direction:column;
+}
+
+.color-box{
+    margin:0 20px;
+    min-height:220px;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.08);
+}
+
+.color-box::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.14);
+    top:-80px;
+    right:-50px;
+}
+
+.color-symbol{
+    font-size:76px;
+    font-weight:900;
+    z-index:2;
+}
+
+.content{
+    padding:25px 25px 10px;
+}
+
+.content .label{
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:2px;
+    color:var(--muted);
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.content h2{
+    font-size:31px;
+    letter-spacing:-.8px;
+    margin-bottom:12px;
+}
+
+.content p{
+    color:#c5ccd6;
+    line-height:1.65;
+    font-size:16px;
+}
+
+.verse{
+    margin-top:18px;
+    padding:17px;
+    border-radius:17px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.verse strong{
+    display:block;
+    font-size:12px;
+    color:#fff;
+    margin-bottom:7px;
+}
+
+.verse span{
+    color:#c3cad5;
+    line-height:1.5;
     font-size:14px;
 }
 
-/* ===== МОБИЛЬНЫЕ ===== */
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom{
+    padding:15px 20px 22px;
+    display:flex;
+    gap:10px;
+}
+
+.bottom button{
+    flex:1;
+}
+
+.next{
+    border:none;
+    background:white;
+    color:#111;
+    border-radius:16px;
+    padding:15px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.prev{
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:white;
+    border-radius:16px;
+    padding:15px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* =========================
+   MODES
+========================= */
+
+.modal{
+    position:absolute;
+    inset:0;
+    background:rgba(5,7,11,.94);
+    backdrop-filter:blur(15px);
+    z-index:50;
+    padding:25px;
+    display:none;
+    flex-direction:column;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.modal h2{
+    font-size:26px;
+}
+
+.close{
+    width:40px;
+    height:40px;
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.self{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    flex:1;
+}
+
+.self-color{
+    width:190px;
+    height:190px;
+    border-radius:45px;
+    margin-bottom:30px;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.self h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.self p{
+    color:var(--muted);
+    line-height:1.6;
+    max-width:350px;
+}
+
+.self button{
+    margin-top:30px;
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.question{
+    margin-top:20px;
+    padding:25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:22px;
+}
+
+.question small{
+    color:var(--muted);
+}
+
+.question h3{
+    margin-top:10px;
+    font-size:25px;
+    line-height:1.25;
+}
+
+.answers{
+    margin-top:22px;
+    display:grid;
+    gap:10px;
+}
+
+.answer{
+    padding:16px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.04);
+    color:white;
+    text-align:left;
+    font-size:15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.answer:hover{
+    background:rgba(255,255,255,.09);
+}
+
+.answer.correct{
+    background:rgba(70,180,100,.2);
+    border-color:rgba(100,220,130,.5);
+}
+
+.answer.wrong{
+    background:rgba(220,70,70,.18);
+    border-color:rgba(255,100,100,.4);
+}
+
+.result{
+    text-align:center;
+    margin-top:auto;
+    padding-top:30px;
+}
+
+.result h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.result p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    color:#697282;
+    font-size:11px;
+    padding:0 20px 15px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade{
+    animation:fade .35s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateX(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
-    .start-content h1{
-        font-size:22px;
+    .app{
+        padding:0;
+        align-items:stretch;
     }
 
-    .start-content h2{
+    .screen{
+        max-width:none;
+        min-height:100vh;
+        min-height:100dvh;
+        border-radius:0;
+        border:none;
+    }
+
+    .start{
+        min-height:100vh;
+        min-height:100dvh;
+    }
+
+    .color-page{
+        min-height:0;
+    }
+
+    .color-box{
+        min-height:210px;
+    }
+
+    .content h2{
+        font-size:28px;
+    }
+
+    .start h1{
         font-size:38px;
-    }
-
-    .start-content p{
-        font-size:17px;
-    }
-
-    .page{
-        min-height:380px;
-        padding:30px 20px;
-    }
-
-    .page h2{
-        font-size:32px;
-    }
-
-    .page p{
-        font-size:18px;
     }
 }
 </style>
@@ -241,26 +548,101 @@ button:hover{
 
 <body>
 
-<!-- ============================= -->
-<!--       СТАРТОВЫЙ ЭКРАН        -->
-<!-- ============================= -->
+<div class="app">
 
-<div id="startScreen" class="start-screen">
+<div class="screen">
 
-    <div class="start-content">
+<!-- =========================
+     START SCREEN
+========================= -->
 
-        <h1>ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</h1>
+<section id="startScreen" class="start">
 
-        <h2>Книжка без слов</h2>
+    <div class="logo">5</div>
 
-        <p>
-            Рассказывай Евангелие без единого слова.
-            Пять цветов помогут просто и понятно
-            рассказать ребёнку о Божьей любви и спасении.
-        </p>
+    <h1>Пять цветов</h1>
 
-        <button class="start-button" onclick="startApp()">
-            НАЧАТЬ
+    <h2>Книжка без слов</h2>
+
+    <p>
+        Простой способ рассказать библейскую весть
+        через пять цветов.
+    </p>
+
+    <button class="primary" onclick="startBook()">
+        Начать
+    </button>
+
+</section>
+
+
+<!-- =========================
+     BOOK SCREEN
+========================= -->
+
+<section id="bookScreen" style="display:none;">
+
+    <div class="top">
+
+        <button class="back" onclick="goHome()">‹</button>
+
+        <div class="counter" id="counter">
+            1 / 5
+        </div>
+
+        <button class="mode-button" onclick="openSelfMode()">
+            🗣 Сам
+        </button>
+
+    </div>
+
+    <div class="progress" id="progress"></div>
+
+    <div id="pageContainer"></div>
+
+    <div class="bottom">
+
+        <button class="prev" onclick="previousPage()">
+            ← Назад
+        </button>
+
+        <button class="next" onclick="nextPage()" id="nextButton">
+            Далее →
+        </button>
+
+    </div>
+
+    <div class="footer">
+        Учебный прототип
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SELF MODE
+========================= -->
+
+<div id="selfModal" class="modal">
+
+    <div class="modal-top">
+
+        <h2>Рассказать самому</h2>
+
+        <button class="close" onclick="closeSelfMode()">×</button>
+
+    </div>
+
+    <div class="self">
+
+        <div id="selfColor" class="self-color"></div>
+
+        <h3 id="selfTitle"></h3>
+
+        <p id="selfHint"></p>
+
+        <button class="primary" onclick="selfNext()">
+            Я рассказал →
         </button>
 
     </div>
@@ -268,318 +650,717 @@ button:hover{
 </div>
 
 
-<!-- ============================= -->
-<!--        ОСНОВНОЕ ПРИЛОЖЕНИЕ   -->
-<!-- ============================= -->
+<!-- =========================
+     QUIZ MODAL
+========================= -->
 
-<div id="app" class="app">
+<div id="quizModal" class="modal">
 
-    <header>
+    <div class="modal-top">
 
-        <h1>ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</h1>
+        <h2>🎯 Тренировка</h2>
 
-        <p>Книжка без слов</p>
-
-    </header>
-
-
-    <div class="container">
-
-        <!-- ЦВЕТНАЯ СТРАНИЦА -->
-
-        <div id="page" class="page gold">
-
-            <h2 id="title">
-                ЗОЛОТАЯ
-            </h2>
-
-            <p id="description">
-                Бог свят, прекрасен и приготовил
-                для человека жизнь с Ним.
-            </p>
-
-        </div>
-
-
-        <!-- ВЫБОР ЦВЕТА -->
-
-        <div class="buttons color-buttons">
-
-            <button onclick="showPage(0)">1</button>
-
-            <button onclick="showPage(1)">2</button>
-
-            <button onclick="showPage(2)">3</button>
-
-            <button onclick="showPage(3)">4</button>
-
-            <button onclick="showPage(4)">5</button>
-
-        </div>
-
-
-        <!-- НАВИГАЦИЯ -->
-
-        <div class="buttons">
-
-            <button onclick="previousPage()">
-                ← Назад
-            </button>
-
-            <button onclick="nextPage()">
-                Далее →
-            </button>
-
-            <button onclick="randomPage()">
-                🎲 Случайная страница
-            </button>
-
-        </div>
-
-
-        <!-- ПОДСКАЗКА -->
-
-        <div class="info">
-
-            <h3>
-                Как рассказывать
-            </h3>
-
-            <p id="story">
-
-                Начни с Бога. Расскажи, что Бог свят,
-                прекрасен, любит людей и приготовил
-                для человека жизнь с Ним.
-
-            </p>
-
-        </div>
+        <button class="close" onclick="closeQuiz()">×</button>
 
     </div>
 
+    <div class="quiz">
 
-    <div class="footer">
+        <div class="question">
 
-        Проект для благовестия детей
+            <small id="quizNumber">
+                Вопрос 1
+            </small>
+
+            <h3 id="quizQuestion"></h3>
+
+            <div class="answers" id="answers"></div>
+
+        </div>
+
+        <div class="result" id="quizResult"></div>
+
+        <button
+            class="primary"
+            id="nextQuiz"
+            onclick="nextQuizQuestion()"
+            style="display:none; margin-top:25px;"
+        >
+            Следующий вопрос →
+        </button>
 
     </div>
+
+</div>
+
+</div>
 
 </div>
 
 
 <script>
 
-/* ============================= */
-/*          ДАННЫЕ СТРАНИЦ       */
-/* ============================= */
+/* ==========================================
+   DATA
+========================================== */
 
 const pages = [
 
     {
-        className:"gold",
+        color:"#f2c94c",
+        textColor:"#111",
+        symbol:"✦",
+        title:"Бог",
+        label:"ЗОЛОТОЙ ЦВЕТ",
 
-        title:"ЗОЛОТАЯ",
+        text:
+        "Золотой цвет напоминает о Боге. " +
+        "Он свят, велик и любит людей. " +
+        "Библия говорит, что Бог приготовил человеку жизнь с Ним.",
 
-        description:
-        "Бог свят, прекрасен и приготовил для человека жизнь с Ним.",
-
-        story:
-        "Начни с Бога. Расскажи, что Бог свят, прекрасен, любит людей и приготовил для человека жизнь с Ним."
+        verse:
+        "«Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного...»",
+        ref:"Иоанна 3:16"
     },
 
-
     {
-        className:"black",
+        color:"#17191e",
+        textColor:"#fff",
+        symbol:"●",
+        title:"Грех",
+        label:"ТЁМНЫЙ ЦВЕТ",
 
-        title:"ЧЁРНАЯ",
+        text:
+        "Тёмный цвет напоминает о грехе. " +
+        "Грех — это всё, что противоречит Божьей воле. " +
+        "Он отделяет человека от Бога.",
 
-        description:
-        "Грех отделяет человека от святого Бога.",
-
-        story:
-        "Расскажи о грехе. Все люди согрешили, а грех отделяет человека от Бога."
+        verse:
+        "«Все согрешили и лишены славы Божией.»",
+        ref:"Римлянам 3:23"
     },
 
-
     {
-        className:"red",
+        color:"#d93636",
+        textColor:"#fff",
+        symbol:"✝",
+        title:"Иисус",
+        label:"КРАСНЫЙ ЦВЕТ",
 
-        title:"КРАСНАЯ",
+        text:
+        "Красный цвет напоминает о крови Иисуса Христа. " +
+        "Иисус умер на кресте за наши грехи и воскрес. " +
+        "Через Него Бог предлагает человеку спасение.",
 
-        description:
-        "Иисус Христос умер за наши грехи.",
-
-        story:
-        "Расскажи, что Иисус Христос умер на кресте за наши грехи и отдал Свою жизнь ради нашего спасения."
+        verse:
+        "«Кровь Иисуса Христа, Сына Его, очищает нас от всякого греха.»",
+        ref:"1 Иоанна 1:7"
     },
 
-
     {
-        className:"white",
+        color:"#f4f4f1",
+        textColor:"#111",
+        symbol:"○",
+        title:"Очищение",
+        label:"БЕЛЫЙ ЦВЕТ",
 
-        title:"БЕЛАЯ",
+        text:
+        "Белый цвет напоминает об очищении. " +
+        "Бог прощает человека, который обращается к Нему с верой. " +
+        "Спасение — это Божий дар.",
 
-        description:
-        "Через Иисуса Христа человек получает прощение и очищение.",
-
-        story:
-        "Расскажи о Божьем прощении. Через веру в Иисуса Христа человек получает прощение грехов и новую жизнь."
+        verse:
+        "«Если исповедуем грехи наши, то Он, будучи верен и праведен, простит нам грехи.»",
+        ref:"1 Иоанна 1:9"
     },
 
-
     {
-        className:"green",
+        color:"#55a85a",
+        textColor:"#fff",
+        symbol:"＋",
+        title:"Рост",
+        label:"ЗЕЛЁНЫЙ ЦВЕТ",
 
-        title:"ЗЕЛЁНАЯ",
+        text:
+        "Зелёный цвет напоминает о росте. " +
+        "После обращения к Богу человек продолжает узнавать Его, " +
+        "молиться, читать Библию и учиться жить с Богом.",
 
-        description:
-        "Новая жизнь с Богом означает духовный рост.",
-
-        story:
-        "Расскажи о духовном росте: молитве, чтении Библии, послушании Богу, общении с верующими и служении."
+        verse:
+        "«Но возрастайте в благодати и познании Господа нашего.»",
+        ref:"2 Петра 3:18"
     }
 
 ];
 
 
+/* ==========================================
+   STATE
+========================================== */
+
 let currentPage = 0;
 
+let selfPage = 0;
 
-/* ============================= */
-/*          ЗАПУСК ПРИЛОЖЕНИЯ   */
-/* ============================= */
+let quizIndex = 0;
 
-function startApp(){
-
-    document.getElementById("startScreen").style.display = "none";
-
-    document.getElementById("app").style.display = "block";
-
-}
+let score = 0;
 
 
-/* ============================= */
-/*        ПОКАЗ СТРАНИЦЫ         */
-/* ============================= */
+/* ==========================================
+   START
+========================================== */
 
-function showPage(number){
+function startBook(){
 
-    currentPage = number;
+    document.getElementById("startScreen").style.display="none";
 
-    const page =
-        document.getElementById("page");
+    document.getElementById("bookScreen").style.display="block";
 
-    page.className =
-        "page " + pages[number].className;
-
-    document.getElementById("title").textContent =
-        pages[number].title;
-
-    document.getElementById("description").textContent =
-        pages[number].description;
-
-    document.getElementById("story").textContent =
-        pages[number].story;
+    renderPage();
 
 }
 
 
-/* ============================= */
-/*             ДАЛЕЕ             */
-/* ============================= */
+/* ==========================================
+   HOME
+========================================== */
+
+function goHome(){
+
+    document.getElementById("bookScreen").style.display="none";
+
+    document.getElementById("startScreen").style.display="flex";
+
+}
+
+
+/* ==========================================
+   RENDER PAGE
+========================================== */
+
+function renderPage(){
+
+    const page = pages[currentPage];
+
+    const container = document.getElementById("pageContainer");
+
+    container.innerHTML = `
+
+        <div class="color-page fade">
+
+            <div
+                class="color-box"
+                style="
+                    background:${page.color};
+                    color:${page.textColor};
+                "
+            >
+
+                <div class="color-symbol">
+                    ${page.symbol}
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="label">
+                    ${page.label}
+                </div>
+
+                <h2>
+                    ${page.title}
+                </h2>
+
+                <p>
+                    ${page.text}
+                </p>
+
+                <div class="verse">
+
+                    <strong>
+                        📖 ${page.ref}
+                    </strong>
+
+                    <span>
+                        ${page.verse}
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.getElementById("counter").textContent =
+        `${currentPage + 1} / ${pages.length}`;
+
+    renderProgress();
+
+    document.getElementById("nextButton").textContent =
+        currentPage === pages.length - 1
+        ? "Тренировка 🎯"
+        : "Далее →";
+
+}
+
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+function renderProgress(){
+
+    const progress =
+        document.getElementById("progress");
+
+    progress.innerHTML="";
+
+    pages.forEach((_,index)=>{
+
+        const span=document.createElement("span");
+
+        if(index <= currentPage){
+            span.classList.add("active");
+        }
+
+        progress.appendChild(span);
+
+    });
+
+}
+
+
+/* ==========================================
+   NEXT
+========================================== */
 
 function nextPage(){
 
-    currentPage++;
+    if(currentPage < pages.length - 1){
 
-    if(currentPage >= pages.length){
+        currentPage++;
 
-        currentPage = 0;
+        renderPage();
+
+    }else{
+
+        openQuiz();
 
     }
-
-    showPage(currentPage);
 
 }
 
 
-/* ============================= */
-/*            НАЗАД              */
-/* ============================= */
+/* ==========================================
+   PREVIOUS
+========================================== */
 
 function previousPage(){
 
-    currentPage--;
+    if(currentPage > 0){
 
-    if(currentPage < 0){
+        currentPage--;
 
-        currentPage = pages.length - 1;
+        renderPage();
 
     }
-
-    showPage(currentPage);
 
 }
 
 
-/* ============================= */
-/*       СЛУЧАЙНАЯ СТРАНИЦА      */
-/* ============================= */
+/* ==========================================
+   SELF MODE
+========================================== */
 
-function randomPage(){
+function openSelfMode(){
 
-    let random;
+    selfPage = 0;
 
-    do{
+    document.getElementById("selfModal")
+        .classList.add("show");
 
-        random =
-            Math.floor(
-                Math.random() * pages.length
-            );
-
-    }
-
-    while(
-        random === currentPage &&
-        pages.length > 1
-    );
-
-    showPage(random);
+    renderSelf();
 
 }
 
 
-/* ============================= */
-/*          КЛАВИАТУРА           */
-/* ============================= */
+function closeSelfMode(){
 
-document.addEventListener(
-    "keydown",
-    function(event){
+    document.getElementById("selfModal")
+        .classList.remove("show");
 
-        if(
-            document.getElementById("app").style.display
-            !== "block"
-        ){
+}
 
-            return;
 
-        }
+function renderSelf(){
 
-        if(event.key === "ArrowRight"){
+    const page=pages[selfPage];
+
+    const color=
+        document.getElementById("selfColor");
+
+    color.style.background=page.color;
+
+    document.getElementById("selfTitle")
+        .textContent=page.title;
+
+    document.getElementById("selfHint")
+        .textContent=
+        "Посмотри на цвет и попробуй сам объяснить, " +
+        "что он означает.";
+
+}
+
+
+function selfNext(){
+
+    if(selfPage < pages.length - 1){
+
+        selfPage++;
+
+        renderSelf();
+
+    }else{
+
+        document.getElementById("selfHint")
+            .textContent=
+            "Отлично! Теперь попробуй рассказать всю историю кому-нибудь ещё.";
+
+        document.querySelector("#selfModal .primary")
+            .textContent="Начать заново";
+
+        document.querySelector("#selfModal .primary")
+            .onclick=function(){
+
+                selfPage=0;
+
+                this.textContent="Я рассказал →";
+
+                this.onclick=selfNext;
+
+                renderSelf();
+
+            };
+
+    }
+
+}
+
+
+/* ==========================================
+   QUIZ DATA
+========================================== */
+
+const quiz=[
+
+    {
+        question:"Какой цвет напоминает о Боге?",
+        answers:[
+            "Золотой",
+            "Тёмный",
+            "Красный",
+            "Зелёный"
+        ],
+        correct:0
+    },
+
+    {
+        question:"Что напоминает тёмный цвет?",
+        answers:[
+            "Рост",
+            "Грех",
+            "Небо",
+            "Радость"
+        ],
+        correct:1
+    },
+
+    {
+        question:"Что напоминает красный цвет?",
+        answers:[
+            "Кровь Иисуса и Его жертву",
+            "Природу",
+            "Небо",
+            "Наши добрые дела"
+        ],
+        correct:0
+    },
+
+    {
+        question:"Что напоминает белый цвет?",
+        answers:[
+            "Грех",
+            "Очищение и прощение",
+            "Силу",
+            "Страх"
+        ],
+        correct:1
+    },
+
+    {
+        question:"Что напоминает зелёный цвет?",
+        answers:[
+            "Рост в Боге",
+            "Крест",
+            "Грех",
+            "Небо"
+        ],
+        correct:0
+    }
+
+];
+
+
+/* ==========================================
+   OPEN QUIZ
+========================================== */
+
+function openQuiz(){
+
+    quizIndex=0;
+
+    score=0;
+
+    document.getElementById("quizModal")
+        .classList.add("show");
+
+    renderQuiz();
+
+}
+
+
+/* ==========================================
+   CLOSE QUIZ
+========================================== */
+
+function closeQuiz(){
+
+    document.getElementById("quizModal")
+        .classList.remove("show");
+
+}
+
+
+/* ==========================================
+   RENDER QUIZ
+========================================== */
+
+function renderQuiz(){
+
+    const q=quiz[quizIndex];
+
+    document.getElementById("quizNumber")
+        .textContent=
+        `Вопрос ${quizIndex+1} из ${quiz.length}`;
+
+    document.getElementById("quizQuestion")
+        .textContent=q.question;
+
+    const answers=
+        document.getElementById("answers");
+
+    answers.innerHTML="";
+
+    document.getElementById("quizResult")
+        .innerHTML="";
+
+    document.getElementById("nextQuiz")
+        .style.display="none";
+
+    q.answers.forEach((answer,index)=>{
+
+        const button=
+            document.createElement("button");
+
+        button.className="answer";
+
+        button.textContent=answer;
+
+        button.onclick=()=>checkAnswer(button,index);
+
+        answers.appendChild(button);
+
+    });
+
+}
+
+
+/* ==========================================
+   CHECK ANSWER
+========================================== */
+
+function checkAnswer(button,index){
+
+    const q=quiz[quizIndex];
+
+    const buttons=
+        document.querySelectorAll(".answer");
+
+    buttons.forEach(b=>{
+        b.disabled=true;
+    });
+
+    if(index===q.correct){
+
+        button.classList.add("correct");
+
+        score++;
+
+        document.getElementById("quizResult")
+            .innerHTML=
+            `<h3>Правильно! 🎉</h3>
+             <p>Отлично, ты запомнил эту часть.</p>`;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        buttons[q.correct]
+            .classList.add("correct");
+
+        document.getElementById("quizResult")
+            .innerHTML=
+            `<h3>Почти!</h3>
+             <p>Посмотри, какой ответ был правильным.</p>`;
+
+    }
+
+    document.getElementById("nextQuiz")
+        .style.display="block";
+
+}
+
+
+/* ==========================================
+   NEXT QUIZ
+========================================== */
+
+function nextQuizQuestion(){
+
+    if(quizIndex < quiz.length - 1){
+
+        quizIndex++;
+
+        renderQuiz();
+
+    }else{
+
+        showQuizResult();
+
+    }
+
+}
+
+
+/* ==========================================
+   QUIZ RESULT
+========================================== */
+
+function showQuizResult(){
+
+    document.getElementById("quizNumber")
+        .textContent="Результат";
+
+    document.getElementById("quizQuestion")
+        .textContent="Ты прошёл тренировку!";
+
+    document.getElementById("answers")
+        .innerHTML="";
+
+    document.getElementById("quizResult")
+        .innerHTML=
+        `<h3>${score} / ${quiz.length} ⭐</h3>
+         <p>
+         Теперь попробуй рассказать «Пять цветов»
+         кому-нибудь самостоятельно.
+         </p>`;
+
+    const button=
+        document.getElementById("nextQuiz");
+
+    button.style.display="block";
+
+    button.textContent="Пройти ещё раз";
+
+    button.onclick=function(){
+
+        quizIndex=0;
+
+        score=0;
+
+        button.textContent="Следующий вопрос →";
+
+        button.onclick=nextQuizQuestion;
+
+        renderQuiz();
+
+    };
+
+}
+
+
+/* ==========================================
+   SWIPE SUPPORT
+========================================== */
+
+let touchStartX=0;
+
+document.addEventListener("touchstart",function(e){
+
+    touchStartX=e.changedTouches[0].screenX;
+
+},{passive:true});
+
+
+document.addEventListener("touchend",function(e){
+
+    const touchEndX=
+        e.changedTouches[0].screenX;
+
+    const difference=
+        touchEndX-touchStartX;
+
+    if(Math.abs(difference)<60) return;
+
+    if(document.getElementById("bookScreen").style.display==="block"){
+
+        if(difference<0){
 
             nextPage();
 
-        }
-
-        if(event.key === "ArrowLeft"){
+        }else{
 
             previousPage();
 
         }
 
     }
-);
+
+},{passive:true});
+
+
+/* ==========================================
+   KEYBOARD
+========================================== */
+
+document.addEventListener("keydown",function(e){
+
+    if(document.getElementById("bookScreen").style.display==="block"){
+
+        if(e.key==="ArrowRight"){
+            nextPage();
+        }
+
+        if(e.key==="ArrowLeft"){
+            previousPage();
+        }
+
+    }
+
+});
 
 </script>
 
