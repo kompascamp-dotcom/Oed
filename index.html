@@ -224,24 +224,6 @@ body{
     justify-content:center;
     position:relative;
     overflow:hidden;
-    box-shadow:inset 0 0 60px rgba(0,0,0,.08);
-}
-
-.color-box::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    background:rgba(255,255,255,.14);
-    top:-80px;
-    right:-50px;
-}
-
-.color-symbol{
-    font-size:76px;
-    font-weight:900;
-    z-index:2;
 }
 
 .content{
@@ -552,10 +534,6 @@ body{
 
 <div class="screen">
 
-<!-- =========================
-     START SCREEN
-========================= -->
-
 <section id="startScreen" class="start">
 
     <div class="logo">5</div>
@@ -575,10 +553,6 @@ body{
 
 </section>
 
-
-<!-- =========================
-     BOOK SCREEN
-========================= -->
 
 <section id="bookScreen" style="display:none;">
 
@@ -619,10 +593,6 @@ body{
 </section>
 
 
-<!-- =========================
-     SELF MODE
-========================= -->
-
 <div id="selfModal" class="modal">
 
     <div class="modal-top">
@@ -649,10 +619,6 @@ body{
 
 </div>
 
-
-<!-- =========================
-     QUIZ MODAL
-========================= -->
 
 <div id="quizModal" class="modal">
 
@@ -707,9 +673,8 @@ body{
 const pages = [
 
     {
-        color:"#f2c94c",
+        color:"#D4AF37",
         textColor:"#111",
-        symbol:"✦",
         title:"Бог",
         label:"ЗОЛОТОЙ ЦВЕТ",
 
@@ -726,12 +691,11 @@ const pages = [
     {
         color:"#17191e",
         textColor:"#fff",
-        symbol:"●",
         title:"Грех",
-        label:"ТЁМНЫЙ ЦВЕТ",
+        label:"ЧЁРНЫЙ ЦВЕТ",
 
         text:
-        "Тёмный цвет напоминает о грехе. " +
+        "Чёрный цвет напоминает о грехе. " +
         "Грех — это всё, что противоречит Божьей воле. " +
         "Он отделяет человека от Бога.",
 
@@ -743,7 +707,6 @@ const pages = [
     {
         color:"#d93636",
         textColor:"#fff",
-        symbol:"✝",
         title:"Иисус",
         label:"КРАСНЫЙ ЦВЕТ",
 
@@ -760,7 +723,6 @@ const pages = [
     {
         color:"#f4f4f1",
         textColor:"#111",
-        symbol:"○",
         title:"Очищение",
         label:"БЕЛЫЙ ЦВЕТ",
 
@@ -777,7 +739,6 @@ const pages = [
     {
         color:"#55a85a",
         textColor:"#fff",
-        symbol:"＋",
         title:"Рост",
         label:"ЗЕЛЁНЫЙ ЦВЕТ",
 
@@ -799,11 +760,8 @@ const pages = [
 ========================================== */
 
 let currentPage = 0;
-
 let selfPage = 0;
-
 let quizIndex = 0;
-
 let score = 0;
 
 
@@ -814,7 +772,6 @@ let score = 0;
 function startBook(){
 
     document.getElementById("startScreen").style.display="none";
-
     document.getElementById("bookScreen").style.display="block";
 
     renderPage();
@@ -829,7 +786,6 @@ function startBook(){
 function goHome(){
 
     document.getElementById("bookScreen").style.display="none";
-
     document.getElementById("startScreen").style.display="flex";
 
 }
@@ -855,13 +811,7 @@ function renderPage(){
                     background:${page.color};
                     color:${page.textColor};
                 "
-            >
-
-                <div class="color-symbol">
-                    ${page.symbol}
-                </div>
-
-            </div>
+            ></div>
 
             <div class="content">
 
@@ -942,7 +892,6 @@ function nextPage(){
     if(currentPage < pages.length - 1){
 
         currentPage++;
-
         renderPage();
 
     }else{
@@ -963,7 +912,6 @@ function previousPage(){
     if(currentPage > 0){
 
         currentPage--;
-
         renderPage();
 
     }
@@ -1020,7 +968,6 @@ function selfNext(){
     if(selfPage < pages.length - 1){
 
         selfPage++;
-
         renderSelf();
 
     }else{
@@ -1038,7 +985,6 @@ function selfNext(){
                 selfPage=0;
 
                 this.textContent="Я рассказал →";
-
                 this.onclick=selfNext;
 
                 renderSelf();
@@ -1052,15 +998,18 @@ function selfNext(){
 
 /* ==========================================
    QUIZ DATA
+   10 ВОПРОСОВ
 ========================================== */
 
 const quiz=[
+
+    /* ===== 5 ВОПРОСОВ ПО ЦВЕТАМ ===== */
 
     {
         question:"Какой цвет напоминает о Боге?",
         answers:[
             "Золотой",
-            "Тёмный",
+            "Чёрный",
             "Красный",
             "Зелёный"
         ],
@@ -1068,7 +1017,7 @@ const quiz=[
     },
 
     {
-        question:"Что напоминает тёмный цвет?",
+        question:"Что напоминает чёрный цвет?",
         answers:[
             "Рост",
             "Грех",
@@ -1109,6 +1058,64 @@ const quiz=[
             "Небо"
         ],
         correct:0
+    },
+
+
+    /* ===== 5 ВОПРОСОВ ПО СТИХАМ ===== */
+
+    {
+        question:"В каком стихе говорится: «Ибо так возлюбил Бог мир...»?",
+        answers:[
+            "Иоанна 3:16",
+            "Римлянам 3:23",
+            "1 Иоанна 1:9",
+            "2 Петра 3:18"
+        ],
+        correct:0
+    },
+
+    {
+        question:"В каком стихе говорится: «Все согрешили и лишены славы Божией»?",
+        answers:[
+            "Иоанна 3:16",
+            "Римлянам 3:23",
+            "1 Иоанна 1:7",
+            "2 Петра 3:18"
+        ],
+        correct:1
+    },
+
+    {
+        question:"Какой стих говорит о том, что кровь Иисуса очищает нас от всякого греха?",
+        answers:[
+            "1 Иоанна 1:7",
+            "Иоанна 3:16",
+            "Римлянам 3:23",
+            "2 Петра 3:18"
+        ],
+        correct:0
+    },
+
+    {
+        question:"В каком стихе говорится: «Если исповедуем грехи наши...»?",
+        answers:[
+            "Римлянам 3:23",
+            "Иоанна 3:16",
+            "1 Иоанна 1:9",
+            "2 Петра 3:18"
+        ],
+        correct:2
+    },
+
+    {
+        question:"Какой стих говорит: «Но возрастайте в благодати и познании Господа нашего»?",
+        answers:[
+            "Иоанна 3:16",
+            "1 Иоанна 1:7",
+            "Римлянам 3:23",
+            "2 Петра 3:18"
+        ],
+        correct:3
     }
 
 ];
@@ -1121,7 +1128,6 @@ const quiz=[
 function openQuiz(){
 
     quizIndex=0;
-
     score=0;
 
     document.getElementById("quizModal")
@@ -1288,11 +1294,9 @@ function showQuizResult(){
     button.onclick=function(){
 
         quizIndex=0;
-
         score=0;
 
         button.textContent="Следующий вопрос →";
-
         button.onclick=nextQuizQuestion;
 
         renderQuiz();
@@ -1328,13 +1332,9 @@ document.addEventListener("touchend",function(e){
     if(document.getElementById("bookScreen").style.display==="block"){
 
         if(difference<0){
-
             nextPage();
-
         }else{
-
             previousPage();
-
         }
 
     }
