@@ -319,6 +319,11 @@ body{
     padding:25px;
     display:none;
     flex-direction:column;
+
+    /* ИСПРАВЛЕНИЕ:
+       теперь содержимое можно прокручивать */
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
 }
 
 .modal.show{
@@ -330,6 +335,9 @@ body{
     justify-content:space-between;
     align-items:center;
     margin-bottom:30px;
+
+    /* верхняя часть остаётся видимой */
+    flex-shrink:0;
 }
 
 .modal h2{
@@ -345,7 +353,12 @@ body{
     color:white;
     font-size:20px;
     cursor:pointer;
+    flex-shrink:0;
 }
+
+/* =========================
+   SELF
+========================= */
 
 .self{
     text-align:center;
@@ -354,6 +367,7 @@ body{
     align-items:center;
     justify-content:center;
     flex:1;
+    min-height:500px;
 }
 
 .self-color{
@@ -387,6 +401,7 @@ body{
     display:flex;
     flex-direction:column;
     flex:1;
+    min-height:0;
 }
 
 .question{
@@ -441,8 +456,8 @@ body{
 
 .result{
     text-align:center;
-    margin-top:auto;
-    padding-top:30px;
+    margin-top:30px;
+    padding:10px 0 5px;
 }
 
 .result h3{
@@ -453,6 +468,12 @@ body{
 .result p{
     color:var(--muted);
     line-height:1.6;
+}
+
+/* кнопка следующего вопроса */
+#nextQuiz{
+    flex-shrink:0;
+    margin-bottom:10px;
 }
 
 /* =========================
@@ -524,6 +545,32 @@ body{
     .start h1{
         font-size:38px;
     }
+
+    /* На телефоне даём модальному окну
+       возможность занимать весь экран */
+    .modal{
+        padding:20px;
+    }
+
+    .modal-top{
+        margin-bottom:20px;
+    }
+
+    .modal h2{
+        font-size:23px;
+    }
+
+    .question{
+        padding:20px;
+    }
+
+    .question h3{
+        font-size:22px;
+    }
+
+    .answer{
+        padding:15px;
+    }
 }
 </style>
 </head>
@@ -533,6 +580,10 @@ body{
 <div class="app">
 
 <div class="screen">
+
+<!-- =========================
+     START SCREEN
+========================= -->
 
 <section id="startScreen" class="start">
 
@@ -553,6 +604,10 @@ body{
 
 </section>
 
+
+<!-- =========================
+     BOOK SCREEN
+========================= -->
 
 <section id="bookScreen" style="display:none;">
 
@@ -593,6 +648,10 @@ body{
 </section>
 
 
+<!-- =========================
+     SELF MODE
+========================= -->
+
 <div id="selfModal" class="modal">
 
     <div class="modal-top">
@@ -619,6 +678,10 @@ body{
 
 </div>
 
+
+<!-- =========================
+     QUIZ MODAL
+========================= -->
 
 <div id="quizModal" class="modal">
 
@@ -772,6 +835,7 @@ let score = 0;
 function startBook(){
 
     document.getElementById("startScreen").style.display="none";
+
     document.getElementById("bookScreen").style.display="block";
 
     renderPage();
@@ -786,6 +850,7 @@ function startBook(){
 function goHome(){
 
     document.getElementById("bookScreen").style.display="none";
+
     document.getElementById("startScreen").style.display="flex";
 
 }
@@ -892,6 +957,7 @@ function nextPage(){
     if(currentPage < pages.length - 1){
 
         currentPage++;
+
         renderPage();
 
     }else{
@@ -912,6 +978,7 @@ function previousPage(){
     if(currentPage > 0){
 
         currentPage--;
+
         renderPage();
 
     }
@@ -968,6 +1035,7 @@ function selfNext(){
     if(selfPage < pages.length - 1){
 
         selfPage++;
+
         renderSelf();
 
     }else{
@@ -985,6 +1053,7 @@ function selfNext(){
                 selfPage=0;
 
                 this.textContent="Я рассказал →";
+
                 this.onclick=selfNext;
 
                 renderSelf();
@@ -1128,6 +1197,7 @@ const quiz=[
 function openQuiz(){
 
     quizIndex=0;
+
     score=0;
 
     document.getElementById("quizModal")
@@ -1252,9 +1322,17 @@ function nextQuizQuestion(){
 
         renderQuiz();
 
+        /* После перехода к новому вопросу
+           возвращаем прокрутку вверх */
+        document.getElementById("quizModal")
+            .scrollTop=0;
+
     }else{
 
         showQuizResult();
+
+        document.getElementById("quizModal")
+            .scrollTop=0;
 
     }
 
@@ -1294,12 +1372,17 @@ function showQuizResult(){
     button.onclick=function(){
 
         quizIndex=0;
+
         score=0;
 
         button.textContent="Следующий вопрос →";
+
         button.onclick=nextQuizQuestion;
 
         renderQuiz();
+
+        document.getElementById("quizModal")
+            .scrollTop=0;
 
     };
 
@@ -1332,9 +1415,13 @@ document.addEventListener("touchend",function(e){
     if(document.getElementById("bookScreen").style.display==="block"){
 
         if(difference<0){
+
             nextPage();
+
         }else{
+
             previousPage();
+
         }
 
     }
