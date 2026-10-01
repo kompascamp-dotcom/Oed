@@ -21,9 +21,7 @@ body {
     min-height: 100vh;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ---------- HEADER ---------- */
 
 header {
     padding: 18px 20px;
@@ -49,9 +47,7 @@ h1 {
     opacity: 0.6;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* ---------- MAIN ---------- */
 
 main {
     max-width: 700px;
@@ -59,25 +55,18 @@ main {
     padding: 15px;
 }
 
-/* =========================
-   PAGE
-========================= */
+/* ---------- PAGE ---------- */
 
 .page {
     width: 100%;
     height: 430px;
-
     border-radius: 24px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     padding: 35px;
-
     transition: background 0.3s ease;
 }
 
@@ -99,19 +88,9 @@ main {
     max-width: 520px;
 }
 
-/* =========================
-   COLORS
-========================= */
-
-.gold {
-    background: #D4AF37;
+.yellow {
+    background: #f5c400;
     color: #111;
-}
-
-.black {
-    background: #050505;
-    color: white;
-    border: 1px solid #333;
 }
 
 .red {
@@ -129,29 +108,27 @@ main {
     color: white;
 }
 
-/* =========================
-   COLOR BUTTONS
-========================= */
+.black {
+    background: #050505;
+    color: white;
+    border: 1px solid #333;
+}
+
+/* ---------- BUTTONS ---------- */
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
-
     margin-top: 15px;
 }
 
 .color-btn {
     border: none;
-
     height: 48px;
-
     border-radius: 12px;
-
     cursor: pointer;
-
     font-weight: bold;
-
     transition: transform 0.15s ease;
 }
 
@@ -159,15 +136,9 @@ main {
     transform: scale(0.94);
 }
 
-.btn-gold {
-    background: #D4AF37;
+.btn-yellow {
+    background: #f5c400;
     color: #111;
-}
-
-.btn-black {
-    background: #050505;
-    color: white;
-    border: 1px solid #555;
 }
 
 .btn-red {
@@ -185,31 +156,28 @@ main {
     color: white;
 }
 
-/* =========================
-   CONTROLS
-========================= */
+.btn-black {
+    background: #050505;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* ---------- CONTROLS ---------- */
 
 .controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 10px;
-
     margin-top: 15px;
 }
 
 .control-btn {
     background: #202020;
     color: white;
-
     border: 1px solid #333;
-
     border-radius: 13px;
-
     padding: 14px;
-
     font-size: 15px;
-
     cursor: pointer;
 }
 
@@ -217,136 +185,59 @@ main {
     transform: scale(0.98);
 }
 
-/* =========================
-   STORY
-========================= */
-
-.story {
-    margin-top: 15px;
-
-    background: #191919;
-
-    border-radius: 18px;
-
-    padding: 20px;
-}
-
-.story-title {
-    font-size: 13px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    color: #888;
-
-    margin-bottom: 8px;
-}
-
-.story-text {
-    font-size: 17px;
-
-    line-height: 1.5;
-}
-
-/* =========================
-   INFO
-========================= */
+/* ---------- INFO ---------- */
 
 .info {
     margin-top: 15px;
-
     background: #191919;
-
     border-radius: 18px;
-
     padding: 20px;
 }
 
 .info h3 {
     font-size: 18px;
-
     margin-bottom: 10px;
 }
 
 .info p {
     color: #ccc;
-
     line-height: 1.5;
-
     font-size: 15px;
 }
 
-/* =========================
-   TEACHER
-========================= */
+/* ---------- STORY MODE ---------- */
 
-.teacher {
+.story {
     margin-top: 15px;
-
     background: #191919;
-
     border-radius: 18px;
-
     padding: 20px;
 }
 
-.teacher h3 {
-    font-size: 18px;
-
+.story-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
     margin-bottom: 8px;
 }
 
-.teacher p {
-    color: #aaa;
-
-    font-size: 14px;
-
+.story-text {
+    font-size: 17px;
     line-height: 1.5;
 }
 
-.teacher-button {
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding: 15px;
-
-    background: #292929;
-
-    color: white;
-
-    border: 1px solid #3a3a3a;
-
-    border-radius: 13px;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-/* =========================
-   MODAL
-========================= */
+/* ---------- MODAL ---------- */
 
 .modal {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
-    background: rgba(0,0,0,0.88);
-
+    background: rgba(0,0,0,0.85);
     z-index: 100;
-
     align-items: center;
-
     justify-content: center;
-
-    padding: 15px;
+    padding: 20px;
 }
 
 .modal.active {
@@ -355,179 +246,33 @@ main {
 
 .modal-box {
     background: #191919;
-
     border-radius: 22px;
-
-    max-width: 650px;
-
+    max-width: 550px;
     width: 100%;
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
     padding: 25px;
 }
 
 .modal-box h2 {
-    font-size: 25px;
-
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
-.modal-description {
-    color: #999;
-
-    line-height: 1.5;
-
-    margin-bottom: 20px;
-}
-
-/* =========================
-   TEACHER CARD
-========================= */
-
-.teacher-card {
-    background: #222;
-
-    border-radius: 18px;
-
-    padding: 20px;
-}
-
-.teacher-color {
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    color: #888;
-
-    margin-bottom: 8px;
-}
-
-.teacher-card h3 {
-    font-size: 24px;
-
-    margin-bottom: 18px;
-}
-
-.teacher-card h4 {
-    font-size: 14px;
-
-    color: #888;
-
-    text-transform: uppercase;
-
-    letter-spacing: .7px;
-
-    margin-top: 18px;
-
-    margin-bottom: 8px;
-}
-
-.teacher-card p {
-    color: #ddd;
-
-    font-size: 16px;
-
-    line-height: 1.55;
-}
-
-/* =========================
-   VERSES
-========================= */
-
-.verse {
-    background: #111;
-
-    border-radius: 13px;
-
-    padding: 14px;
-
-    margin-top: 9px;
-}
-
-.verse strong {
-    display: block;
-
-    color: white;
-
-    margin-bottom: 5px;
-}
-
-.verse span {
-    color: #aaa;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-/* =========================
-   TEACHER CONTROLS
-========================= */
-
-.teacher-controls {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 9px;
-
-    margin-top: 20px;
-}
-
-.teacher-control {
-    padding: 13px;
-
-    background: #292929;
-
-    color: white;
-
-    border: 1px solid #3b3b3b;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-}
-
-.teacher-progress {
-    text-align: center;
-
-    color: #666;
-
-    font-size: 12px;
-
-    margin-top: 15px;
+.modal-box p {
+    color: #ccc;
+    line-height: 1.6;
 }
 
 .close {
+    margin-top: 20px;
     width: 100%;
-
-    margin-top: 15px;
-
-    padding: 14px;
-
+    padding: 13px;
     background: white;
-
-    color: #111;
-
+    color: black;
     border: none;
-
     border-radius: 12px;
-
     font-weight: bold;
-
-    cursor: pointer;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 550px) {
 
@@ -541,9 +286,7 @@ main {
 
     .page {
         height: 390px;
-
         border-radius: 20px;
-
         padding: 25px;
     }
 
@@ -561,162 +304,97 @@ main {
 
     .color-btn {
         height: 44px;
-
         font-size: 12px;
-    }
-
-    .teacher-controls {
-        grid-template-columns: 1fr;
     }
 }
 </style>
 </head>
 
-
 <body>
 
 <header>
-
-    <div class="logo">
-        ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ
-    </div>
-
-    <h1>
-        Книжка без слов
-    </h1>
-
-    <div class="subtitle">
-        Рассказывай Евангелие без единого слова
-    </div>
-
+    <div class="logo">ОБЩЕСТВО ЕВАНГЕЛИЗАЦИИ ДЕТЕЙ</div>
+    <h1>Книжка без слов</h1>
+    <div class="subtitle">Рассказывай Евангелие без единого слова</div>
 </header>
-
 
 <main>
 
-    <!-- =========================
-         КНИЖКА
-    ========================== -->
+    <!-- PAGE -->
 
-    <section
-        id="page"
-        class="page gold">
+    <section id="page" class="page yellow">
 
-        <div
-            class="page-number"
-            id="pageNumber">
-
+        <div class="page-number" id="pageNumber">
             СТРАНИЦА 1 ИЗ 5
-
         </div>
 
         <h2 id="pageTitle">
-            ЗОЛОТАЯ
+            ЖЁЛТАЯ
         </h2>
 
         <p id="pageDescription">
-
-            Бог свят, прекрасен и приготовил
-            для человека жизнь с Ним.
-
+            Бог создал прекрасный мир и хочет, чтобы человек был с Ним.
         </p>
 
     </section>
 
 
-    <!-- =========================
-         ЦВЕТА
-    ========================== -->
+    <!-- COLOR BUTTONS -->
 
     <div class="buttons">
 
-        <button
-            class="color-btn btn-gold"
-            onclick="showPage(0)">
-
+        <button class="color-btn btn-yellow"
+                onclick="showPage(0)">
             1
-
         </button>
 
-        <button
-            class="color-btn btn-black"
-            onclick="showPage(1)">
-
+        <button class="color-btn btn-red"
+                onclick="showPage(1)">
             2
-
         </button>
 
-        <button
-            class="color-btn btn-red"
-            onclick="showPage(2)">
-
+        <button class="color-btn btn-white"
+                onclick="showPage(2)">
             3
-
         </button>
 
-        <button
-            class="color-btn btn-white"
-            onclick="showPage(3)">
-
+        <button class="color-btn btn-green"
+                onclick="showPage(3)">
             4
-
         </button>
 
-        <button
-            class="color-btn btn-green"
-            onclick="showPage(4)">
-
+        <button class="color-btn btn-black"
+                onclick="showPage(4)">
             5
-
         </button>
 
     </div>
 
 
-    <!-- =========================
-         УПРАВЛЕНИЕ
-    ========================== -->
+    <!-- CONTROLS -->
 
     <div class="controls">
 
-        <button
-            class="control-btn"
-            onclick="previousPage()">
-
+        <button class="control-btn" onclick="previousPage()">
             ← Назад
-
         </button>
 
-        <button
-            class="control-btn"
-            onclick="nextPage()">
-
+        <button class="control-btn" onclick="nextPage()">
             Далее →
-
         </button>
 
-        <button
-            class="control-btn"
-            onclick="randomPage()">
-
+        <button class="control-btn" onclick="randomPage()">
             🎲 Случайная страница
-
         </button>
 
-        <button
-            class="control-btn"
-            onclick="openTeacher()">
-
-            📖 Тренировка учителя
-
+        <button class="control-btn" onclick="openTraining()">
+            🎯 Тренировка
         </button>
 
     </div>
 
 
-    <!-- =========================
-         ПОДСКАЗКА
-    ========================== -->
+    <!-- STORY -->
 
     <div class="story">
 
@@ -724,199 +402,45 @@ main {
             Подсказка рассказчику
         </div>
 
-        <div
-            class="story-text"
-            id="storyText">
-
-            Начни с того, что Бог свят,
-            прекрасен и приготовил для человека
-            жизнь с Ним.
-
+        <div class="story-text" id="storyText">
+            Начни с Божьего творения. Расскажи, что Бог свят, добр и хочет иметь отношения с человеком.
         </div>
 
     </div>
 
 
-    <!-- =========================
-         ИНФОРМАЦИЯ
-    ========================== -->
+    <!-- ABOUT -->
 
     <div class="info">
 
-        <h3>
-            Как использовать
-        </h3>
+        <h3>Как использовать</h3>
 
         <p>
-
-            Покажи ребёнку одну страницу и рассказывай
-            историю, опираясь только на цвет.
-            Не обязательно запоминать текст дословно —
-            главное передать Евангелие понятно,
+            Покажи ребёнку одну страницу и рассказывай историю,
+            опираясь только на цвет. Не обязательно запоминать
+            текст дословно — главное передать Евангелие понятно,
             просто и доступно.
-
         </p>
-
-    </div>
-
-
-    <!-- =========================
-         ПОДГОТОВКА УЧИТЕЛЯ
-    ========================== -->
-
-    <div class="teacher">
-
-        <h3>
-            Подготовка учителя
-        </h3>
-
-        <p>
-
-            Повтори значение цветов и соответствующие
-            библейские места перед тем, как рассказывать
-            «Книжку без слов».
-
-        </p>
-
-        <button
-            class="teacher-button"
-            onclick="openTeacher()">
-
-            📖 Открыть тренировку
-
-        </button>
 
     </div>
 
 </main>
 
 
-<!-- =====================================================
-     ТРЕНИРОВКА УЧИТЕЛЯ
-====================================================== -->
+<!-- TRAINING MODAL -->
 
-<div
-    class="modal"
-    id="teacherModal">
+<div class="modal" id="trainingModal">
 
     <div class="modal-box">
 
-        <h2>
-            📖 Тренировка учителя
-        </h2>
+        <h2>🎯 Тренировка</h2>
 
-        <div class="modal-description">
+        <p id="trainingText">
+            Попробуй рассказать всю историю, используя только цвета.
+        </p>
 
-            Учись рассказывать истину каждого цвета,
-            опираясь на Божье Слово.
-
-        </div>
-
-
-        <div class="teacher-card">
-
-            <div
-                class="teacher-color"
-                id="teacherColor">
-
-                ЗОЛОТАЯ СТРАНИЦА
-
-            </div>
-
-
-            <h3
-                id="teacherTitle">
-
-                Бог и вечная жизнь
-
-            </h3>
-
-
-            <h4>
-                Главная истина
-            </h4>
-
-            <p id="teacherTruth">
-
-                Бог свят, прекрасен, любит человека
-                и приготовил для него вечную жизнь.
-
-            </p>
-
-
-            <h4>
-                Что сказать ребёнку
-            </h4>
-
-            <p id="teacherExplain">
-
-                Расскажи ребёнку о Боге. Он создал нас,
-                любит нас и хочет, чтобы мы были с Ним.
-
-            </p>
-
-
-            <h4>
-                Библейские стихи
-            </h4>
-
-            <div id="teacherVerses"></div>
-
-
-            <div class="teacher-controls">
-
-                <button
-                    class="teacher-control"
-                    onclick="previousTeacher()">
-
-                    ← Предыдущий
-
-                </button>
-
-                <button
-                    class="teacher-control"
-                    onclick="nextTeacher()">
-
-                    Следующий →
-
-                </button>
-
-                <button
-                    class="teacher-control"
-                    onclick="randomTeacher()">
-
-                    🎲 Случайный
-
-                </button>
-
-                <button
-                    class="teacher-control"
-                    onclick="testTeacher()">
-
-                    🎯 Проверить себя
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="teacher-progress"
-                id="teacherProgress">
-
-                1 / 5
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="close"
-            onclick="closeTeacher()">
-
+        <button class="close" onclick="closeTraining()">
             Закрыть
-
         </button>
 
     </div>
@@ -926,85 +450,70 @@ main {
 
 <script>
 
-/* =====================================================
-   ПЯТЬ ЦВЕТОВ
-===================================================== */
+/* =========================================
+   ДАННЫЕ СТРАНИЦ
+========================================= */
 
 const pages = [
 
     {
-        className: "gold",
-
-        title: "ЗОЛОТАЯ",
-
+        className: "yellow",
+        title: "ЖЁЛТАЯ",
         description:
-        "Бог свят, прекрасен и приготовил для человека жизнь с Ним.",
-
+        "Бог создал прекрасный мир и хочет, чтобы человек был с Ним.",
         story:
-        "Начни с Бога. Расскажи, что Бог свят, прекрасен, любит людей и приготовил для человека жизнь с Ним."
+        "Начни с Божьего творения. Расскажи, что Бог свят, добр и хочет иметь отношения с человеком."
     },
-
-
-    {
-        className: "black",
-
-        title: "ЧЁРНАЯ",
-
-        description:
-        "Грех отделяет человека от святого Бога.",
-
-        story:
-        "Расскажи о грехе. Все люди согрешили, а грех отделяет человека от Бога."
-    },
-
 
     {
         className: "red",
-
         title: "КРАСНАЯ",
-
         description:
-        "Иисус Христос умер за наши грехи.",
-
+        "Иисус Христос умер за наши грехи и отдал за нас Свою жизнь.",
         story:
-        "Расскажи, что Иисус Христос умер на кресте за наши грехи и отдал Свою жизнь ради нашего спасения."
+        "Расскажи о грехе человека и о том, что Иисус добровольно умер на кресте ради нашего спасения."
     },
-
 
     {
         className: "white",
-
         title: "БЕЛАЯ",
-
         description:
-        "Через Иисуса Христа человек получает прощение и очищение.",
-
+        "Бог может простить наши грехи и очистить нас.",
         story:
-        "Расскажи о Божьем прощении. Через веру в Иисуса Христа человек получает прощение грехов и новую жизнь."
+        "Объясни, что через Иисуса человек может получить прощение и новую жизнь."
     },
-
 
     {
         className: "green",
-
         title: "ЗЕЛЁНАЯ",
-
         description:
-        "Новая жизнь с Богом означает духовный рост.",
-
+        "После обращения к Богу начинается новая жизнь и духовный рост.",
         story:
-        "Расскажи о духовном росте: молитве, чтении Библии, послушании Богу, общении с верующими и служении."
+        "Расскажи о молитве, чтении Библии, послушании Богу и росте в вере."
+    },
+
+    {
+        className: "black",
+        title: "ЧЁРНАЯ",
+        description:
+        "Грех отделяет человека от Бога, но Бог предлагает спасение.",
+        story:
+        "Заверши рассказ призывом задуматься о своих отношениях с Богом и принять решение следовать за Ним."
     }
 
 ];
 
 
+/* =========================================
+   ТЕКУЩАЯ СТРАНИЦА
+========================================= */
+
 let currentPage = 0;
 
 
-/* =====================================================
+/* =========================================
    ПОКАЗАТЬ СТРАНИЦУ
-===================================================== */
+========================================= */
 
 function showPage(number) {
 
@@ -1012,7 +521,10 @@ function showPage(number) {
 
     const page = pages[number];
 
-    document.getElementById("page").className =
+    const pageElement =
+        document.getElementById("page");
+
+    pageElement.className =
         "page " + page.className;
 
     document.getElementById("pageNumber").textContent =
@@ -1029,9 +541,9 @@ function showPage(number) {
 }
 
 
-/* =====================================================
-   НАВИГАЦИЯ
-===================================================== */
+/* =========================================
+   СЛЕДУЮЩАЯ
+========================================= */
 
 function nextPage() {
 
@@ -1045,6 +557,10 @@ function nextPage() {
 }
 
 
+/* =========================================
+   ПРЕДЫДУЩАЯ
+========================================= */
+
 function previousPage() {
 
     currentPage--;
@@ -1057,16 +573,16 @@ function previousPage() {
 }
 
 
+/* =========================================
+   СЛУЧАЙНАЯ
+========================================= */
+
 function randomPage() {
 
     let random;
 
     do {
-        random =
-            Math.floor(
-                Math.random() *
-                pages.length
-            );
+        random = Math.floor(Math.random() * pages.length);
     }
     while (random === currentPage);
 
@@ -1074,402 +590,71 @@ function randomPage() {
 }
 
 
-/* =====================================================
-   ДАННЫЕ ДЛЯ УЧИТЕЛЯ
-===================================================== */
+/* =========================================
+   ТРЕНИРОВКА
+========================================= */
 
-const teacherLessons = [
+function openTraining() {
 
-    {
-        color: "ЗОЛОТАЯ СТРАНИЦА",
+    const questions = [
 
-        title:
-        "Бог свят и приготовил вечную жизнь",
+        "Попробуй рассказать историю, начиная с жёлтого цвета.",
 
-        truth:
-        "Бог свят, прекрасен, любит человека и хочет, чтобы человек был с Ним.",
+        "Посмотри на все пять цветов и попробуй вспомнить, что означает каждый из них.",
 
-        explain:
-        "Золотой цвет может напоминать о Божьей славе, величии и обещании вечной жизни. Расскажи ребёнку, что Бог создал нас и хочет иметь с нами отношения.",
+        "Попробуй рассказать Евангелие человеку, который никогда раньше его не слышал.",
 
-        verses: [
+        "Покажи себе случайный цвет и попробуй продолжить историю с него.",
 
-            {
-                ref: "Иоанна 3:16",
-                text:
-                "Бог так возлюбил мир, что отдал Сына Своего Единородного."
-            },
+        "Попробуй рассказать всю историю без подсказок."
+    ];
 
-            {
-                ref: "Откровение 21:3–4",
-                text:
-                "Бог будет с людьми, и смерти уже не будет."
-            },
+    const random =
+        Math.floor(Math.random() * questions.length);
 
-            {
-                ref: "Иоанна 14:2–3",
-                text:
-                "Иисус приготовляет место для Своих последователей."
-            }
+    document.getElementById("trainingText").textContent =
+        questions[random];
 
-        ]
-    },
-
-
-    {
-        color: "ЧЁРНАЯ СТРАНИЦА",
-
-        title:
-        "Грех отделяет человека от Бога",
-
-        truth:
-        "Бог свят, но все люди согрешили. Грех отделяет нас от Бога.",
-
-        explain:
-        "Объясни ребёнку, что грех — это всё, что против Божьей воли: неправильные поступки, слова, мысли и желания. Все люди грешат.",
-
-        verses: [
-
-            {
-                ref: "Римлянам 3:23",
-                text:
-                "Все согрешили и лишены славы Божией."
-            },
-
-            {
-                ref: "Римлянам 6:23",
-                text:
-                "Возмездие за грех — смерть."
-            },
-
-            {
-                ref: "Исаия 59:2",
-                text:
-                "Беззакония ваши произвели разделение между вами и Богом."
-            }
-
-        ]
-    },
-
-
-    {
-        color: "КРАСНАЯ СТРАНИЦА",
-
-        title:
-        "Иисус умер за наши грехи",
-
-        truth:
-        "Иисус Христос умер на кресте за наши грехи.",
-
-        explain:
-        "Расскажи ребёнку, что Иисус был без греха, но добровольно пошёл на крест и умер за нас. Его кровь показывает цену нашего спасения.",
-
-        verses: [
-
-            {
-                ref: "1 Коринфянам 15:3",
-                text:
-                "Христос умер за грехи наши, по Писанию."
-            },
-
-            {
-                ref: "Римлянам 5:8",
-                text:
-                "Христос умер за нас, когда мы были ещё грешниками."
-            },
-
-            {
-                ref: "1 Петра 1:18–19",
-                text:
-                "Мы искуплены драгоценною кровью Христа."
-            }
-
-        ]
-    },
-
-
-    {
-        color: "БЕЛАЯ СТРАНИЦА",
-
-        title:
-        "Прощение и очищение",
-
-        truth:
-        "Бог может простить наши грехи и очистить нас через Иисуса Христа.",
-
-        explain:
-        "Объясни, что спасение нельзя заслужить добрыми делами. Бог предлагает прощение через Иисуса Христа.",
-
-        verses: [
-
-            {
-                ref: "1 Иоанна 1:9",
-                text:
-                "Если исповедуем грехи наши, то Он простит нам грехи и очистит нас."
-            },
-
-            {
-                ref: "Деяния 16:31",
-                text:
-                "Веруй в Господа Иисуса Христа, и спасёшься."
-            },
-
-            {
-                ref: "Иоанна 3:16",
-                text:
-                "Бог так возлюбил мир, что отдал Сына Своего."
-            }
-
-        ]
-    },
-
-
-    {
-        color: "ЗЕЛЁНАЯ СТРАНИЦА",
-
-        title:
-        "Рост в новой жизни",
-
-        truth:
-        "Человек, который следует за Христом, должен возрастать в вере.",
-
-        explain:
-        "Зелёный цвет напоминает о росте. Верующий растёт через молитву, чтение Библии, послушание Богу, общение с другими христианами и служение.",
-
-        verses: [
-
-            {
-                ref: "1 Петра 2:2",
-                text:
-                "Возрастайте в спасении."
-            },
-
-            {
-                ref: "2 Петра 3:18",
-                text:
-                "Возрастайте в благодати и познании Господа."
-            },
-
-            {
-                ref: "Иоанна 15:5",
-                text:
-                "Кто пребывает во Мне, тот приносит много плода."
-            }
-
-        ]
-    }
-
-];
-
-
-let teacherPage = 0;
-
-
-/* =====================================================
-   ОТКРЫТЬ ТРЕНИРОВКУ
-===================================================== */
-
-function openTeacher() {
-
-    document
-        .getElementById("teacherModal")
+    document.getElementById("trainingModal")
         .classList.add("active");
-
-    showTeacher(teacherPage);
 }
 
 
-/* =====================================================
+/* =========================================
    ЗАКРЫТЬ ТРЕНИРОВКУ
-===================================================== */
+========================================= */
 
-function closeTeacher() {
+function closeTraining() {
 
-    document
-        .getElementById("teacherModal")
+    document.getElementById("trainingModal")
         .classList.remove("active");
 }
 
 
-/* =====================================================
-   ПОКАЗАТЬ УРОК
-===================================================== */
-
-function showTeacher(number) {
-
-    teacherPage = number;
-
-    const lesson =
-        teacherLessons[number];
-
-
-    document.getElementById("teacherColor")
-        .textContent =
-        lesson.color;
-
-
-    document.getElementById("teacherTitle")
-        .textContent =
-        lesson.title;
-
-
-    document.getElementById("teacherTruth")
-        .textContent =
-        lesson.truth;
-
-
-    document.getElementById("teacherExplain")
-        .textContent =
-        lesson.explain;
-
-
-    const verses =
-        document.getElementById("teacherVerses");
-
-    verses.innerHTML = "";
-
-
-    lesson.verses.forEach(function(verse) {
-
-        const div =
-            document.createElement("div");
-
-        div.className = "verse";
-
-        div.innerHTML =
-            "<strong>" +
-            verse.ref +
-            "</strong>" +
-            "<span>" +
-            verse.text +
-            "</span>";
-
-        verses.appendChild(div);
-
-    });
-
-
-    document.getElementById("teacherProgress")
-        .textContent =
-        (number + 1) +
-        " / " +
-        teacherLessons.length;
-}
-
-
-/* =====================================================
-   ТРЕНИРОВКА — НАВИГАЦИЯ
-===================================================== */
-
-function nextTeacher() {
-
-    teacherPage++;
-
-    if (teacherPage >= teacherLessons.length) {
-        teacherPage = 0;
-    }
-
-    showTeacher(teacherPage);
-}
-
-
-function previousTeacher() {
-
-    teacherPage--;
-
-    if (teacherPage < 0) {
-        teacherPage =
-            teacherLessons.length - 1;
-    }
-
-    showTeacher(teacherPage);
-}
-
-
-function randomTeacher() {
-
-    let random;
-
-    do {
-        random =
-            Math.floor(
-                Math.random() *
-                teacherLessons.length
-            );
-    }
-    while (random === teacherPage);
-
-    showTeacher(random);
-}
-
-
-/* =====================================================
-   ПРОВЕРКА УЧИТЕЛЯ
-===================================================== */
-
-function testTeacher() {
-
-    const questions = [
-
-        "Какой стих говорит, что Бог возлюбил мир?",
-
-        "Какой стих говорит, что все люди согрешили?",
-
-        "Какой стих говорит, что Христос умер за наши грехи?",
-
-        "Какой стих говорит об очищении от греха?",
-
-        "Почему зелёный цвет можно связать с духовным ростом?",
-
-        "Попробуй за 30 секунд объяснить значение этого цвета ребёнку."
-
-    ];
-
-
-    const question =
-        questions[
-            Math.floor(
-                Math.random() *
-                questions.length
-            )
-        ];
-
-
-    alert(
-        "🎯 Вопрос для учителя\n\n" +
-        question +
-        "\n\nПопробуй ответить самостоятельно."
-    );
-}
-
-
-/* =====================================================
+/* =========================================
    КЛАВИАТУРА
-===================================================== */
+========================================= */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+document.addEventListener("keydown", function(event) {
 
-        if (event.key === "ArrowRight") {
-            nextPage();
-        }
-
-        if (event.key === "ArrowLeft") {
-            previousPage();
-        }
-
-        if (event.key === "Escape") {
-            closeTeacher();
-        }
-
+    if (event.key === "ArrowRight") {
+        nextPage();
     }
-);
+
+    if (event.key === "ArrowLeft") {
+        previousPage();
+    }
+
+    if (event.key === "Escape") {
+        closeTraining();
+    }
+
+});
 
 
-/* =====================================================
+/* =========================================
    СТАРТ
-===================================================== */
+========================================= */
 
 showPage(0);
 
